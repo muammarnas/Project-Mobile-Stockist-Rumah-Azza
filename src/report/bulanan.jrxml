@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2aa44b59-4c30-4f6a-819d-2a259b4f4127">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dari" class="java.lang.String"/>
+	<parameter name="sampai" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     laporan_transaksi.`Tanggal` AS laporan_transaksi_Tanggal,
+     laporan_transaksi.`Nomor_Transaksi` AS laporan_transaksi_Nomor_Transaksi,
+     laporan_transaksi.`ID_Customers` AS laporan_transaksi_ID_Customers,
+     laporan_transaksi.`Total` AS laporan_transaksi_Total
+FROM
+     `laporan_transaksi` laporan_transaksi
+WHERE
+	Tanggal
+BETWEEN
+	'$P!{dari}' AND '$P!{sampai}']]>
+	</queryString>
+	<field name="laporan_transaksi_Tanggal" class="java.lang.String"/>
+	<field name="laporan_transaksi_Nomor_Transaksi" class="java.lang.String"/>
+	<field name="laporan_transaksi_ID_Customers" class="java.lang.String"/>
+	<field name="laporan_transaksi_Total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="191" y="62" width="246" height="22" uuid="f5eaf777-6431-4398-9372-9f1e49951f14"/>
+				<text><![CDATA[Telp. (+62) 811 2988 12 | Email : rumahazza2@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="46" width="100" height="20" uuid="d14d12f9-0092-4ae3-97c7-e02dbed850b3"/>
+				<text><![CDATA[Jawa Barat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="19" width="261" height="53" uuid="dc757acc-163f-4ca3-b5fe-6bca738a2df7"/>
+				<text><![CDATA[Jl. Intan No. 25 Griya Permata Regency Cikampek Utara Kec. Kotabaru Kab. Karawang 41374]]></text>
+			</staticText>
+			<image>
+				<reportElement x="8" y="0" width="242" height="97" uuid="b23d73e9-daa8-4780-a37a-e0cf2088404a"/>
+				<imageExpression><![CDATA["D:\\xgambar\\logo.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="29" y="86" width="500" height="1" uuid="2ab3fba6-168b-4313-a4e3-6cadd7e5322f"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="210" y="0" width="151" height="20" uuid="e07ee45d-b60a-4623-aa63-a37401bb8386"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BULANAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="75" y="0" width="100" height="20" uuid="4336bf5e-0638-40fe-953b-e29e42e3b698"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="0" width="100" height="20" uuid="c1db7040-bce8-4d4c-bb9a-aeba5308ccbe"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nomor Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="0" width="100" height="20" uuid="5669cdca-55df-4152-8139-7a575e7ba875"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Customers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="0" width="100" height="20" uuid="62453bb4-8325-4a3a-9ed9-f1daa344c259"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="75" y="0" width="100" height="20" uuid="60e8a32d-9700-4a1c-a2c5-da561323745f"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{laporan_transaksi_Tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="0" width="100" height="20" uuid="a8bd614e-1060-4b82-a6e2-4822601f7466"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{laporan_transaksi_Nomor_Transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="0" width="100" height="20" uuid="1428f9a6-8a99-4036-a9c1-05b015a36681"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{laporan_transaksi_ID_Customers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="100" height="20" uuid="08285e7f-b329-4c29-8692-3d9b5ed59513"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{laporan_transaksi_Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="50" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="385" y="18" width="119" height="20" uuid="618aaf74-6df8-4d58-b17b-f5cb2f9d0d40"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
